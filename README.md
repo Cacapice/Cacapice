@@ -57,14 +57,14 @@ AgentLedger records agent operations as structured, auditable events so develope
 
 The project is evolving toward a safety-oriented infrastructure component for agent systems, with features including:
 
-* **Atomic transactions** using Python context managers
-* **Idempotency protection** against duplicate agent actions
-* **Strict-mode controls** and operational guardrails
-* **Structured event logging**
-* **Pydantic-based validation**
-* **Pandas / CSV export** for analysis
-* **Programmatic spending limits**
-* **Automated testing and CI**
+* **APE provenance events** and operational-boundary validation
+* **Durable run checkpoints** with leases and fencing tokens
+* **External-effect lifecycle** with explicit ambiguous (`UNKNOWN`) outcomes and reconciliation
+* **Request-bound idempotency** for consequential operations
+* **Tamper-evident hash chains** with optional Ed25519 evidence signatures
+* **OpenTelemetry and MCP integration surfaces**
+* **Bayesian-ready evidence export** for downstream inference
+* **Transactional controls, spending limits, automated tests, and CI**
 
 ```python
 with ledger.transaction():
@@ -87,6 +87,14 @@ The objective is straightforward:
 > Give autonomous systems an evidence trail that can be inspected, tested, and independently verified.
 
 [Explore AgentLedger →](https://github.com/Cacapice/AgentLedger)
+
+---
+
+### 🔬 Upstream engineering — TransformerLens training controls
+
+I also maintain work on lightweight decoder-only pretraining architecture adapters and training controls for **TransformerLens**, including provenance hooks that can emit reproducibility evidence without coupling TransformerLens to a specific audit backend.
+
+[Explore TransformerLens-Training-Controls →](https://github.com/Cacapice/TransformerLens-Training-Controls)
 
 ---
 
